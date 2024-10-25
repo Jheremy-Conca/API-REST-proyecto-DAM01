@@ -42,14 +42,7 @@ const initDB = async () => {
       );
     `);
 
-    // Inserta datos de prueba en la tabla users
-    await pool.query(`
-      INSERT INTO users (nomUsuario, correo, password, nombre, sexo, descripcion, imagen)
-      VALUES 
-      ('usuario123', 'usuario123@example.com', 'contraseñaSegura', 'Juan Pérez', 'Masculino', 'Descripción del usuario', 'ruta/a/imagen.jpg'),
-      ('usuario456', 'usuario456@example.com', 'otraContraseñaSegura', 'María López', 'Femenino', 'Descripción de otro usuario', 'ruta/a/otra_imagen.jpg')
-      ON CONFLICT DO NOTHING;  -- Evita duplicados si ya existen los registros
-    `);
+
 
     // Crea la tabla de dinosaurios
     await pool.query(`
