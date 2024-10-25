@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Listado de Dinosaurios</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+</head>
+<body>
+    <div >
+        <h1 class="text-center">Listado de Dinosaurios</h1>
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Nombre Común</th>
+                    <th>Nombre Científico</th>
+                    <th>Periodo</th>
+                    <th>Hábitat</th>
+                    <th>Dieta</th>
+                    <th>Datos Curiosos</th>
+                    <th>Imagen</th>
+                    <th>Familia</th>
+                    <th>Tamaño</th>
+                    <th>Peso</th>
+                    <th>Descripción</th>
+                    <th>Ubicación</th>
+                </tr>
+            </thead>
+            <tbody id="dino-table-body">
+                <!-- Los registros se insertarán aquí dinámicamente -->
+            </tbody>
+        </table>
+    </div>
+
+    <script>
+        async function fetchDinos() {
+            try {
+                const response = await fetch('/dino'); // Asegúrate de que esta URL sea correcta
+                const data = await response.json();
+                const tableBody = document.getElementById('dino-table-body');
+
+                data.forEach(dino => {
+                    const row = `
+                        <tr>
+                            <td>${dino.iddinosaurio}</td>
+                            <td>${dino.nomdinosaurio}</td>
+                            <td>${dino.nomcientifico}</td>
+                            <td>${dino.periodo}</td>
+                            <td>${dino.habitat}</td>
+                            <td>${dino.dieta}</td>
+                            <td>${dino.datoscuriosos}</td>
+                            <td>${dino.imagen}</td>
+                            <td>${dino.familia}</td>
+                            <td>${dino.tamaño}</td>
+                            <td>${dino.peso}</td>
+                            <td>${dino.descripcion}</td>
+                            <td>${dino.ubicacion}</td>
+                        </tr>
+                    `;
+                    tableBody.innerHTML += row;
+                });
+            } catch (error) {
+                console.error('Error fetching dinosaur data:', error);
+            }
+        }
+
+        // Llama a la función al cargar la página
+        window.onload = fetchDinos;
+    </script>
+</body>
+</html>
