@@ -50,8 +50,6 @@ CREATE TABLE tb_favoritos (
 
 INSERT INTO tb_favoritos (idDinosaurio, nomUsuario) 
 VALUES 
-(1, 'jheremy'), 
-(2, 'usuario456');  
 
 
 SELECT * FROM tb_favoritos;
