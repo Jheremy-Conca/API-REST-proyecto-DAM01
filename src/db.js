@@ -75,8 +75,8 @@ const initDB = async () => {
       INSERT INTO tb_dinosaurios 
       (nomDinosaurio, nomCientifico, periodo, habitat, dieta, datosCuriosos, imagen, familia, tamaño, peso, descripcion, ubicacion) 
       VALUES
-      ('Tyrannosaurus Rex', 'Tyrannosaurus rex', 'Cretácico', 'Bosques y llanuras', 'Carnívoro', 'El Tyrannosaurus rex tenía una mordida más fuerte que cualquier otro animal terrestre.', 'imagen_trex.jpg', 'Tyrannosauridae', '12 metros', '8 toneladas', 'El Tyrannosaurus Rex es uno de los dinosaurios más grandes y feroces conocidos.', 'Norteamérica'),
-      ('Triceratops', 'Triceratops horridus', 'Cretácico', 'Llanuras', 'Herbívoro', 'El Triceratops tenía tres cuernos en la cabeza y un gran escudo óseo.', 'imagen_triceratops.jpg', 'Ceratopsidae', '9 metros', '6 toneladas', 'El Triceratops es uno de los dinosaurios más conocidos por su distintiva cabeza con cuernos.', 'Norteamérica')
+      ('Tyrannosaurus Rex', 'Tyrannosaurus rex', 'Cretácico', 'Bosques y llanuras', 'Carnívoro', 'El Tyrannosaurus rex tenía una mordida más fuerte que cualquier otro animal terrestre.', '1', 'Tyrannosauridae', '12 metros', '8 toneladas', 'El Tyrannosaurus Rex es uno de los dinosaurios más grandes y feroces conocidos.', 'Norteamérica'),
+      ('Triceratops', 'Triceratops horridus', 'Cretácico', 'Llanuras', 'Herbívoro', 'El Triceratops tenía tres cuernos en la cabeza y un gran escudo óseo.', '2', 'Ceratopsidae', '9 metros', '6 toneladas', 'El Triceratops es uno de los dinosaurios más conocidos por su distintiva cabeza con cuernos.', 'Norteamérica')
       ON CONFLICT DO NOTHING;
     `);
 
