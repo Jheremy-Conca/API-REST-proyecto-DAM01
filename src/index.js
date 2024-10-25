@@ -13,9 +13,16 @@ const app = express();
 
 app.use(morgan('dev'));
 app.use(express.json());
+
+// Definir las rutas
 app.use('/users', userRoutes); // Asegúrate de definir las rutas correctamente
 app.use('/dino', dinoRoutes);
 app.use('/fav', favRoutes);
+
+// Ruta para la raíz
+app.get('/', (req, res) => {
+    res.send('API is running'); // Mensaje simple para verificar que la API está en funcionamiento
+});
 
 app.listen(PORT, () => {
     console.log(`Server on port ${PORT}`);
